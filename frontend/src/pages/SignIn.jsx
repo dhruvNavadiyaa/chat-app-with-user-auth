@@ -14,8 +14,11 @@ import {
   FieldLabel,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
+import { useNavigate } from "react-router"
+import paths from "@/utils/constants"
 
 export default function SignIn() {
+  const navigate = useNavigate();
   return (
     <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
       <div className="w-full max-w-sm">
@@ -53,11 +56,8 @@ export default function SignIn() {
                   </Field>
                   <Field>
                     <Button type="submit">Login</Button>
-                    <Button variant="outline" type="button">
-                      Login with Google
-                    </Button>
                     <FieldDescription className="text-center">
-                      Don&apos;t have an account? <a href="#">Sign up</a>
+                      Don&apos;t have an account? <span className="curson-pointer" onClick={() => navigate(paths.signUp)}>Sign up</span>
                     </FieldDescription>
                   </Field>
                 </FieldGroup>
