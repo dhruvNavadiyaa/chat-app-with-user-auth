@@ -6,14 +6,11 @@ import {
 import SignIn from '@/pages/SignIn';
 import { SignUp } from '@/pages/SignUp';
 import ChatRoom from '@/pages/ChatRoom';
+import Auth from '@/components/auth';
 
 export default function Routes() {
 
   let router = createBrowserRouter([
-    {
-      path: "/",
-      Component: ChatRoom,
-    },
     {
       path: "/sign-in",
       Component: SignIn,
@@ -22,6 +19,16 @@ export default function Routes() {
       path: "/sign-up",
       Component: SignUp,
     },
+    {
+      path: "/",
+      Component: Auth,
+      children: [
+        {
+          path: "/",
+          Component: ChatRoom,
+        },
+      ]
+    }
   ]);
 
   return (

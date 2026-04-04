@@ -68,3 +68,11 @@ export const logout = (req, res) => {
     res.cookie("jwt", "", { maxAge: 0 })
     res.status(200).json({ message: "Logged out Successfully" })
 }
+
+export const authenticateUser = (req, res) => {
+    try {
+        return res.status(500).json({ message: "user varified", status: true })
+    } catch (error) {
+        res.status(500).json({ message: "internal server error", status: false })
+    }
+}
