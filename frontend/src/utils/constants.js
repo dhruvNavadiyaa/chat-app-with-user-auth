@@ -1,6 +1,5 @@
-const paths = {
-    signUp: "/sign-up",
-    signIn: "/sign-in"
-}
-
-export default paths;
+export const routePaths = {
+  ROOT: "/",
+  SIGN_UP: "/sign-up",
+  SIGN_IN: "/sign-in",
+};
